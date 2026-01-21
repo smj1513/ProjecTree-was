@@ -12,6 +12,7 @@ pipeline {
             steps {
                 dir('ProjecTree-was') {
                     withCredentials([file(credentialsId: 'application-yml', variable: 'APP_YML')]) {
+                        sh 'rm -f src/main/resources/application.yml'
                         sh 'cp $APP_YML src/main/resources/application.yml'
                         sh 'chmod +x gradlew'
                         sh './gradlew build'
