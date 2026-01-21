@@ -50,7 +50,7 @@ public interface NodeDocsController {
                       "taskType": "CATEGORY",
                       "nodeStatus": "IN_PROGRESS",
                       "difficult": 1,
-                      "nodeType": "ROOT",
+                      "nodeType": "PROJECT",
                       "children": [
                         {
                           "id": 2,
