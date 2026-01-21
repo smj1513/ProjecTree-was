@@ -5,6 +5,7 @@ import com.ssafy.projectree.domain.member.api.dto.MemberNicknameUpdateDto;
 import com.ssafy.projectree.domain.member.api.dto.MemberReadDto;
 import com.ssafy.projectree.global.api.code.SuccessCode;
 import com.ssafy.projectree.global.api.response.CommonResponse;
+import com.ssafy.projectree.global.docs.MemberDocsController;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-public class MemberController {
+public class MemberController implements MemberDocsController {
 
     // TODO: JWT 추가시 PathVariable 수정 필요
 
