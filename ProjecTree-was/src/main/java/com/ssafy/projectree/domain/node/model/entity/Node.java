@@ -1,6 +1,7 @@
 package com.ssafy.projectree.domain.node.model.entity;
 
 import com.ssafy.projectree.domain.node.enums.NodeStatus;
+import com.ssafy.projectree.domain.node.enums.NodeType;
 import com.ssafy.projectree.domain.node.enums.Priority;
 import com.ssafy.projectree.domain.user.model.entity.Member;
 import com.ssafy.projectree.global.model.entity.BaseEntity;
@@ -39,10 +40,13 @@ public abstract class Node extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Priority priority;
 
-
     @Column(columnDefinition = "TEXT")
     private String note;
 
     @Column(columnDefinition = "VARCHAR(50)")
     private String identifier;
+
+    public abstract NodeType getNodeType();
+
+    public abstract int getCandidateLimit();
 }
