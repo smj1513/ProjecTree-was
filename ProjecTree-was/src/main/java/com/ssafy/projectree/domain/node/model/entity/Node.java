@@ -3,7 +3,7 @@ package com.ssafy.projectree.domain.node.model.entity;
 import com.ssafy.projectree.domain.node.enums.NodeStatus;
 import com.ssafy.projectree.domain.node.enums.NodeType;
 import com.ssafy.projectree.domain.node.enums.Priority;
-import com.ssafy.projectree.domain.user.model.entity.Member;
+import com.ssafy.projectree.domain.member.model.entity.Member;
 import com.ssafy.projectree.global.model.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
