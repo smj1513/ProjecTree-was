@@ -1,5 +1,6 @@
 package com.ssafy.projectree.domain.node.model.entity;
 
+import com.ssafy.projectree.domain.node.enums.NodeType;
 import com.ssafy.projectree.domain.node.enums.TaskType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,4 +24,14 @@ public class TaskNode extends Node{
 
 	@Column(columnDefinition = "TEXT")
 	private String comparison;
+
+	@Override
+	public NodeType getNodeType() {
+		return NodeType.TASK;
+	}
+
+	@Override
+	public int getCandidateLimit() {
+		return 0;
+	}
 }

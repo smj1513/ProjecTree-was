@@ -1,5 +1,6 @@
 package com.ssafy.projectree.domain.node.model.entity;
 
+import com.ssafy.projectree.domain.node.enums.NodeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
@@ -17,4 +18,14 @@ public class AdvanceNode extends Node{
 
 	@Column(columnDefinition = "TEXT")
 	private String comparison;
+
+	@Override
+	public NodeType getNodeType() {
+		return NodeType.ADVANCE;
+	}
+
+	@Override
+	public int getCandidateLimit() {
+		return 0;
+	}
 }
