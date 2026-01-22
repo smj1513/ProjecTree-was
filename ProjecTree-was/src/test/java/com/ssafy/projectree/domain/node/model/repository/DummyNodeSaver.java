@@ -1,5 +1,7 @@
 package com.ssafy.projectree.domain.node.model.repository;
 
+import com.ssafy.projectree.domain.node.enums.NodeStatus;
+import com.ssafy.projectree.domain.node.enums.Priority;
 import com.ssafy.projectree.domain.node.model.entity.EpicNode;
 import com.ssafy.projectree.domain.node.model.entity.Node;
 import com.ssafy.projectree.domain.node.model.entity.ProjectNode;
@@ -24,7 +26,7 @@ class DummyNodeSaver {
 
 	@Commit
 	@Test
-	//@Disabled
+	@Disabled
 	public void saveDummyNode(){
 		Node root = ProjectNode.builder()
 				.name("P성향 여행자를 위한 여행도우미 앱")
@@ -32,6 +34,9 @@ class DummyNodeSaver {
 						계획을 세우는데 어려움을 겪는 P성향 여행자들을 위한 여행 도우미, 본 프로젝트는 '계획은 귀찮지만, 효율적인 여행은 하고 싶은' P(인식형) 성향의 여행자들을 위한 즉흥 여행 추천 및 보조 웹 어플리케이션입니다.
 						기존의 여행 플랫폼들이 J(판단형) 성향의 '철저한 계획 수립'에 초점을 맞춘 것과 달리, P-PliP은 사용자의 모호한 니즈를 파악하여 Just-in-Time (적시) 정보를 제공하고, 선택의 스트레스를 최소화하는 것을 목표로 합니다.
 						""")
+				.priority(Priority.P0)
+				.identifier("US-001")
+				.status(NodeStatus.TODO)
 				.build();
 
 		Node epic = EpicNode.builder()
@@ -41,6 +46,9 @@ class DummyNodeSaver {
 						주요 기능: 장바구니 담기, 수량 변경, 쿠폰 적용, 결제 모듈 연동(PG), 주문 내역 생성
 						비즈니스 가치: 구매 전환율 상승 및 결제 편의성 제공
 						""")
+				.priority(Priority.P0)
+				.identifier("US-001")
+				.status(NodeStatus.TODO)
 				.build();
 		Node story = StoryNode.builder()
 				.name("[로그인] 사용자는 구글 계정을 통해 간편하게 로그인할 수 있다.")
@@ -88,6 +96,9 @@ class DummyNodeSaver {
 						
 						[ ] 필수 동의 항목(이메일, 프로필)을 사용자가 거부했을 경우, "필수 권한 동의가 필요합니다" 안내와 함께 로그인 초기 화면으로 복귀해야 함.
 						""")
+				.priority(Priority.P0)
+				.identifier("US-001")
+				.status(NodeStatus.TODO)
 				.build();
 		nodeRepository.saveRoot(root);
 		nodeRepository.saveWithParent(root.getId(), epic);
