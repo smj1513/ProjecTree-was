@@ -34,7 +34,7 @@ public class Candidate extends BaseEntity {
 	@JoinColumn(name = "derivation_node_id", nullable = true)
 	private Node derivationNode;
 
-	@Column(columnDefinition = "VARCHAR(30)")
+	@Column(columnDefinition = "VARCHAR(100)")
 	private String name;
 
 	@Column(columnDefinition = "TEXT")
